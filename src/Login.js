@@ -4,6 +4,8 @@ import { Redirect } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
+import { setUserSession } from './Component/Common';
+
 
 
 export default function Login() {
@@ -39,8 +41,12 @@ export default function Login() {
     }
 
     if (auth) {
-        localStorage.setItem("token", "AuthenticatedToTrue");
-        return <Redirect to="/content" />
+        setUserSession( "AuthenticatedToTrue");
+        // localStorage.setItem("token", "AuthenticatedToTrue");
+        return <Redirect to={{
+            pathname:"/content",
+            state: username
+        }} />
     }
     else {
 
