@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
-import { setUserSession } from './Component/Common';
+import { setUserSession } from '../UserToken';
 
 
 
